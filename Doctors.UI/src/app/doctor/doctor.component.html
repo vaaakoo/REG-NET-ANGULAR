@@ -1,0 +1,45 @@
+
+<div class="container">
+    <div *ngIf="doctor">
+      <div>
+        Name:
+        <input [(ngModel)]="doctor.firstName" placeholder="First Name" />
+      </div>
+      <div>
+        Last Name:
+        <input [(ngModel)]="doctor.lastName" placeholder="Last Name" />
+      </div>
+      <div>
+        Email:
+        <input [(ngModel)]="doctor.email" placeholder="Email" />
+      </div>
+      <div>
+        Category:
+        <input [(ngModel)]="doctor.category" placeholder="Category" />
+      </div>
+      <div>
+        Place:
+        <input [(ngModel)]="doctor.place" placeholder="Place" />
+      </div>
+      <button (click)="updatedoctor(doctor)" *ngIf="doctor.id">Save</button>
+      <button (click)="deletedoctor(doctor)" *ngIf="doctor.id">Delete</button>
+      <button (click)="createdoctor(doctor)" *ngIf="!doctor.id">Create</button>
+    </div>
+
+    <!-- <form>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1">
+        </div>
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form> -->
+</div>

@@ -1,0 +1,25 @@
+<button (click)="initNewDoctor()">Create New doctor</button>
+
+<table>
+  <thead>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Email</th>
+    <th>Category</th>
+    <th>Place</th>
+    <th></th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let doctor of Doctores">
+      <td>{{ doctor.firstName }}</td>
+      <td>{{ doctor.lastName }}</td>
+      <td>{{ doctor.email }}</td>
+      <td>{{ doctor.category }}</td>
+      <td>{{ doctor.place }}</td>
+      <td><button (click)="editDoctor(doctor)">Edit</button></td>
+    </tr>
+  </tbody>
+</table>
+
+<app-doctor
+  [doctor]="DoctorToEdit" (doctoresUpdated)="updateDoctorList($event)"></app-doctor>
